@@ -12,12 +12,14 @@ fi
 APP_DIR="$HOME/applications/i3lock-fancy"
 SCRIPT_FILE="$APP_DIR/usr/bin/i3lock-fancy"
 DEB_FILE="${DEB_URL##*/}"
+SCRIPT_URL="https://raw.githubusercontent.com/ExonegeS/scripts/refs/heads/main/changelock.sh"
 
 # Create application directory if it doesn't exist
 mkdir -p "$APP_DIR"
 
 # Download the .deb file
 wget "$DEB_URL" --directory-prefix="$HOME/applications"
+
 
 # Extract the .deb file
 dpkg-deb -x "$HOME/applications/$DEB_FILE" "$APP_DIR"
@@ -39,6 +41,19 @@ ALIAS_COMMAND="alias mylock=\"$APP_DIR/usr/bin/i3lock-fancy\""
 if ! grep -q "mylock" "$HOME/.bashrc"; then
     echo "$ALIAS_COMMAND" >> "$HOME/.bashrc"
     echo "Added alias mylock to ~/.bashrc. Please restart your terminal or run 'source ~/.bashrc' to apply."
+else
+    echo "Alias mylock already exists in ~/.bashrc."
+fi
+
+
+# Downloading the changelock.sh script
+wget "$SCRIPT_URL" --directory-prefix="$APP_DIR/usr/bin/changelock.sh/"
+
+# Set up an alias for mylockchange
+ALIAS_COMMAND="alias mylockchange=\"bash $APP_DIR/usr/bin/changelock.sh\""
+if ! grep -q "mylockchange" "$HOME/.bashrc"; then
+    echo "$ALIAS_COMMAND" >> "$HOME/.bashrc"
+    echo "Added alias mylockchange to ~/.bashrc. Please restart your terminal or run 'source ~/.bashrc' to apply."
 else
     echo "Alias mylock already exists in ~/.bashrc."
 fi
