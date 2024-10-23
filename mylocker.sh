@@ -50,7 +50,7 @@ fi
 wget "$SCRIPT_URL" --directory-prefix="$APP_DIR/usr/bin/changelock.sh/"
 
 # Set up an alias for mylockchange
-ALIAS_COMMAND="alias mylockchange=\"bash $APP_DIR/usr/bin/changelock.sh\""
+ALIAS_COMMAND="alias mylockchange=\"bash $APP_DIR/usr/bin/\""
 if ! grep -q "mylockchange" "$HOME/.bashrc"; then
     echo "$ALIAS_COMMAND" >> "$HOME/.bashrc"
     echo "Added alias mylockchange to ~/.bashrc. Please restart your terminal or run 'source ~/.bashrc' to apply."
