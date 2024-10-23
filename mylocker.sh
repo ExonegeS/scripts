@@ -36,7 +36,7 @@ else
 fi
 
 
-# Set up an alias for mylock
+# Set up an alias for mylocki
 ALIAS_COMMAND="alias mylock=\"$APP_DIR/usr/bin/i3lock-fancy\""
 if ! grep -q "mylock" "$HOME/.bashrc"; then
     echo "$ALIAS_COMMAND" >> "$HOME/.bashrc"
@@ -47,10 +47,10 @@ fi
 
 
 # Downloading the changelock.sh script
-wget "$SCRIPT_URL" --directory-prefix="$APP_DIR/usr/bin/changelock.sh/"
+wget "$SCRIPT_URL" --directory-prefix="$APP_DIR/usr/bin/"
 
 # Set up an alias for mylockchange
-ALIAS_COMMAND="alias mylockchange=\"bash $APP_DIR/usr/bin/\""
+ALIAS_COMMAND="alias mylockchange=\"bash $APP_DIR/usr/bin/changelock.sh\""
 if ! grep -q "mylockchange" "$HOME/.bashrc"; then
     echo "$ALIAS_COMMAND" >> "$HOME/.bashrc"
     echo "Added alias mylockchange to ~/.bashrc. Please restart your terminal or run 'source ~/.bashrc' to apply."
