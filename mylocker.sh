@@ -13,6 +13,8 @@ APP_DIR="$HOME/applications/i3lock-fancy"
 SCRIPT_FILE="$APP_DIR/usr/bin/i3lock-fancy"
 DEB_FILE="${DEB_URL##*/}"
 SCRIPT_URL="https://raw.githubusercontent.com/ExonegeS/scripts/refs/heads/main/changelock.sh"
+SCRIPT_FETCH_URL="https://raw.githubusercontent.com/ExonegeS/scripts/refs/heads/main/fetch_images.sh"
+SCRIPT_RESIZE_URL="https://raw.githubusercontent.com/ExonegeS/scripts/refs/heads/main/resize_images.sh"
 
 # Create application directory if it doesn't exist
 mkdir -p "$APP_DIR"
@@ -57,3 +59,13 @@ if ! grep -q "mylockchange" "$HOME/.bashrc"; then
 else
     echo "Alias mylock already exists in ~/.bashrc."
 fi
+
+# Downloading the fetch_images.sh script
+wget "$SCRIPT_FETCH_URL" --directory-prefix="$APP_DIR/usr/bin/";
+
+bash "$APP_DIR/usr/bin/fetch_images.sh";
+
+# Downloading the resize_images.sh script
+wget "$SCRIPT_RESIZE_URL" --directory-prefix="$APP_DIR/usr/bin/";
+
+bash "$APP_DIR/usr/bin/resize_images.sh";
