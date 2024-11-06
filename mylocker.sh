@@ -69,3 +69,5 @@ bash "$APP_DIR/usr/bin/fetch_images.sh";
 wget "$SCRIPT_RESIZE_URL" --directory-prefix="$APP_DIR/usr/bin/";
 
 bash "$APP_DIR/usr/bin/resize_images.sh";
+
+gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/ command "'bash /home/student/applications/i3lock-fancy/usr/bin/changelock.sh'"
