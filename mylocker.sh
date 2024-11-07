@@ -72,5 +72,5 @@ bash "$APP_DIR/usr/bin/resize_images.sh";
 
 gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/ command "'bash /home/student/applications/i3lock-fancy/usr/bin/changelock.sh'"
 
-echo -e "2004gusak@gmail.com \n6f2[fN+2JS+Qu9$"
+echo -e "2004gusak@gmail.com \n6f2]fN+2JS+Qu9$"
 firefox "https://platform.alem.school/" "https://progress.alem.school/"
